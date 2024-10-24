@@ -1,0 +1,9 @@
+.idea
+*_venv
+venv
+*__pycache__*
+
+experiments
+scripts/randomly_shuffled_results
+scripts/run_results/*png
+testdata/data/client1/model
