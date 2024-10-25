@@ -49,13 +49,13 @@ testdata
     |       |    ...
     |
     └───client2
-    |   │   client_config.yaml
-    |   │   test.csv
-    |   │   train.csv
-    |   │   valid.csv   
-    |   └───images
-    |       |    *.png
-    |       |    ...
+        │   client_config.yaml
+        │   test.csv
+        │   train.csv
+        │   valid.csv   
+        └───images
+            |    *.png
+            |    ...
 ```
 
 There is one config file (```test_config.yaml```) to define the overall training process (e.g. epochs, learning rate, etc.).
