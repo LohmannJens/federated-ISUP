@@ -10,7 +10,7 @@ from settings.sacred_experiment import ex
 from tensorflow.keras.callbacks import Callback
 
 from dataset_creation.label_encoding import label_to_int
-from aggregation.fed_avg import fed_avg, client_drift_weighted
+from aggregation.fed_avg import fed_avg
 
 
 def value_name_in_logs(logs, value):
@@ -430,9 +430,6 @@ def train_loop(clients, train_batch_size, valid_batch_size, train_params, label_
     for epoch in np.arange(initial_epoch, epochs):
         print(f"### EPOCH {epoch} (communication round) ###")
         s = time.time()
-        if train_params['aggregation_method'] == 'client_drift_weighted':
-            server = clients[0]
-            server_model_weights = server.model.get_weights()
         for client in clients:
             # update callbacks
             for callback in client.callbacks:
@@ -471,8 +468,8 @@ def train_loop(clients, train_batch_size, valid_batch_size, train_params, label_
         if train_params['aggregation_method'] == 'fed_avg':
             n_datapoints = [sum(cl.train_class_distribution) for cl in clients]
             final_weights = fed_avg(models, n_datapoints)
-        elif train_params['aggregation_method'] == 'client_drift_weighted':
-            final_weights = client_drift_weighted(models, server_model_weights)
+        else:
+            exit(f"Aggregation method '{train_params['aggregation_method']}' not implemented.")
 
         for client in clients:
             client.model.set_weights(final_weights)
