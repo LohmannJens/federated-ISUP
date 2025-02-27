@@ -1,7 +1,7 @@
 # Federated ISUP prediction
 This repository contains all scripts to train and evaluate a federated model for ISUP grading.
+To run the lightweight versions including embeddings from foundation models see folder `foundation_models`.
 The model requires histopathology images (TMA spots) as input and predicts the corresponding ISUP grade.
-The neural network is based on Inception-v3 and retrains it for this task.
 
 
 ## Setup
@@ -43,7 +43,9 @@ testdata
     |   │   client_config.yaml
     |   │   test.csv
     |   │   train.csv
-    |   │   valid.csv   
+    |   │   valid.csv
+    |   │   conch_embeddings.csv
+    |   │   uni_embeddings.csv
     |   └───images
     |       |    *.png
     |       |    ...
@@ -52,7 +54,9 @@ testdata
         │   client_config.yaml
         │   test.csv
         │   train.csv
-        │   valid.csv   
+        │   valid.csv
+        │   conch_embeddings.csv
+        │   uni_embeddings.csv
         └───images
             |    *.png
             |    ...
@@ -64,6 +68,21 @@ Additionally, a pretrained Inception-v3 needs to be downloaded for the desired p
 For the test data it is already included in this repository.
 For each client the data is split in individual csv files for train, validation, and testing.
 The preprocessed images are stored in the folder `images/` as PNG.
+
+
+## Trainig of the foundation model architectures
+
+All scripts to train the architectures based on the foundation model embeddings are in the folder `foundation_models`.
+This part of the repository is implemented in PyTorch to be in line with the implementations of UNI and CONCH.
+Therefore, the folder `foundation_models` includes an additional conda environment that can be installed using:
+
+```
+conda env create -f environment.yml
+conda activate isuptorch
+```
+
+To create the embeddings of UNI and CONCH please refer to the implementations of the original papers.
+An example embedding for each client for the two foundation models is given in the folder `testdata/data`.
 
 
 ## Additional scripts

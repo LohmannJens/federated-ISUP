@@ -109,19 +109,6 @@ def run(_config, _log, _run):
         test_results.append(evaluate(server.model, test_data, _config['data_generation']['label_type'],
                                 test_class_distribution, _config['evaluation']['metrics'], res_path))
 
-    # STORE RESULTS
-    train_history = {}
-    for k, v in history.history.items():
-        train_history[k] = np.array(v).astype(float).tolist()
-    allresults = {'train_results': train_history, 'test_results': test_results}
-
-    for client in clients:
-        script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', client.results_folder))
-        with open(os.path.join(script_path, 'temp_results.json'), 'w') as resultsfile:
-            json.dump(allresults, resultsfile)
-        ex.add_artifact(os.path.join(script_path, 'temp_results.json'), f'{client.name}results.json')
-        os.remove(os.path.join(script_path, 'temp_results.json'))
-
 
 @ex.automain
 def main(_config, _log, _run):

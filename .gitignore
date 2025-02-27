@@ -7,3 +7,5 @@ experiments
 scripts/randomly_shuffled_results
 scripts/run_results/*png
 testdata/data/client1/model
+testdata/data/client2/model
+foundation_models/results

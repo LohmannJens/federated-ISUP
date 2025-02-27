@@ -1,0 +1,5 @@
+model_name: "conch"
+input_channels: 514
+lr: 0.00001
+epochs: 5
+main_datapath: "../testdata/data"

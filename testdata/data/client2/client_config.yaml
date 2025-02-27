@@ -1,5 +1,5 @@
-train_csv_file: /home/jens/FC/FLIGHT/fed-ISUP/testdata/data/client2/train.csv # full path to train.csv
-valid_csv_file: /home/jens/FC/FLIGHT/fed-ISUP/testdata/data/client2/valid.csv # full path to valid.csv
-test_csv_file: /home/jens/FC/FLIGHT/fed-ISUP/testdata/data/client2/test.csv
-image_directory: /home/jens/FC/FLIGHT/fed-ISUP/testdata/data/client2
-model_save_path: /home/jens/FC/FLIGHT/fed-ISUP/testdata/data/client2/model # folder where model should be saved
+train_csv_file: ../testdata/data/client2/train.csv # full path to train.csv
+valid_csv_file: ../testdata/data/client2/valid.csv # full path to valid.csv
+test_csv_file: ../testdata/data/client2/test.csv
+image_directory: ../testdata/data/client2
+model_save_path: ../testdata/data/client2/model # folder where model should be saved
