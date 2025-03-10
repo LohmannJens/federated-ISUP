@@ -3,6 +3,7 @@ This repository contains all scripts to train and evaluate a federated model for
 To run the lightweight versions including embeddings from foundation models see folder `foundation_models`.
 The model requires histopathology images (TMA spots) as input and predicts the corresponding ISUP grade.
 
+Directly go to the foundation models [README file](https://github.com/LohmannJens/federated-ISUP/blob/main/foundation_models/README.md).
 
 ## Setup
 To run the code multiple python libraries need to be installed.
@@ -70,9 +71,9 @@ For each client the data is split in individual csv files for train, validation,
 The preprocessed images are stored in the folder `images/` as PNG.
 
 
-## Trainig of the foundation model architectures
-
+## Lightweight training with foundation model embeddings
 All scripts to train the architectures based on the foundation model embeddings are in the folder `foundation_models`.
+Please refer to the additonal [README file](https://github.com/LohmannJens/federated-ISUP/blob/main/foundation_models/README.md) for further explanations.
 This part of the repository is implemented in PyTorch to be in line with the implementations of UNI and CONCH.
 Therefore, the folder `foundation_models` includes an additional conda environment that can be installed using:
 
