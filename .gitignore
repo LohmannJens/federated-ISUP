@@ -10,3 +10,9 @@ scripts/increasing_clients/*png
 testdata/data/client1/model
 testdata/data/client2/model
 foundation_models/results
+
+
+scripts/poster*
+scripts/aggregation_results
+scripts/hue_sat_val
+scripts/aggregation_mechanisms.ipynb
