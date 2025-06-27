@@ -83,7 +83,7 @@ conda activate isuptorch
 ```
 
 To create the embeddings of UNI and CONCH please refer to the implementations of the original papers.
-Example embeddings for the two foundation models is given in the folder `testdata/data`.
+Example embeddings for the two foundation models are given in the folder `testdata/data`.
 
 
 ## Additional scripts
