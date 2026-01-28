@@ -49,7 +49,6 @@ testdata
 
 There are two config file to define the overall training process (e.g. epochs, learning rate, etc.) for the two foundation models UNI and CONCH.
 For each client the data is split in train, validation, and testing while running the script.
-They splitting is done based on the column `split` the train, valid, and test .csv files.
 
 
 ## Creation of model embeddings
