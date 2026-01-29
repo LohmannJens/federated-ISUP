@@ -78,6 +78,7 @@ This part of the repository is implemented in PyTorch to be in line with the imp
 Therefore, the folder `foundation_models` includes an additional conda environment that can be installed using:
 
 ```
+cd foundation_models
 conda env create -f environment.yml
 conda activate isuptorch
 ```
