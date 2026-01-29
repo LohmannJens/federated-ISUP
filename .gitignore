@@ -15,4 +15,5 @@ foundation_models/results
 scripts/poster*
 scripts/aggregation_results
 scripts/hue_sat_val
+scripts/communication_overhead
 scripts/aggregation_mechanisms.ipynb
